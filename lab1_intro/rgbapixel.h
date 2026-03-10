@@ -11,6 +11,11 @@
 #include <stdint.h>
 
 // Your code here
+
+
+#ifndef RGBAPIXEL_H
+#define RGBAPIXEL_H
+
 class RGBAPixel{
 
     private:
@@ -24,4 +29,5 @@ class RGBAPixel{
     uint8_t alpha;
 
 };
+#endif // RGBAPIXEL_H
 
