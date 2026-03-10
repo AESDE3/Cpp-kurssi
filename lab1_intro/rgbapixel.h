@@ -11,5 +11,17 @@
 #include <stdint.h>
 
 // Your code here
+class RGBAPixel{
 
+    private:
+
+    public:
+    RGBAPixel();
+    RGBAPixel(uint8_t _r, uint8_t _g, uint8_t _b) : red(_r), green(_g), blue(_b), alpha(255) {}
+    uint8_t red;
+    uint8_t green;
+    uint8_t blue;
+    uint8_t alpha;
+
+};
 

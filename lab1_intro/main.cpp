@@ -58,6 +58,29 @@ void brighten(PNG & original, int amount)
     {
       for (size_t xi = 0; xi < original.width(); xi++){
 	      // Your code here
+        uint16_t sum_red = original(xi,yi).red + amount;
+        uint16_t sum_green = original(xi,yi).green + amount;
+        uint16_t sum_blue = original(xi,yi).blue + amount;
+            if(sum_red > 255){
+                original(xi,yi).red = 255;
+            }
+            else{
+                original(xi,yi).red = sum_red;
+            }
+            if (sum_green > 255){
+                original(xi,yi).green = 255;
+            }
+            else{
+                original(xi,yi).green = sum_green;
+            }
+            if(sum_blue > 255){
+                original(xi,yi).blue = 255;
+            }
+            else{
+                original(xi,yi).blue = sum_blue; 
+            }
+            
+            
 
       }
     }
@@ -81,7 +104,9 @@ void blendImages(PNG & firstImage, const PNG & secondImage)
     {
       for (size_t xi = 0; xi < std::min(firstImage.width(), secondImage.width()); xi++){
 	      // Your code here
-
+            firstImage(xi,yi).red = (firstImage(xi,yi).red + secondImage(xi,yi).red) / 2;
+            firstImage(xi,yi).green = (firstImage(xi,yi).green + secondImage(xi,yi).green) / 2;
+            firstImage(xi,yi).blue = (firstImage(xi,yi).blue + secondImage(xi,yi).blue) / 2;
       }
     }
 }

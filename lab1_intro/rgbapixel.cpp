@@ -10,5 +10,4 @@
 #include "rgbapixel.h"
 
 // Your code here
-
-
+RGBAPixel::RGBAPixel(){red = 255, green = 255, blue = 255, alpha = 255;};
